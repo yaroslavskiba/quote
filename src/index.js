@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ReactDOM from 'react-dom/client';
+import { FaQuoteLeft } from "react-icons/fa";
+import { GroupButton, handle } from './button';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const load = handle()
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function App() {
+  const [quote, setQuote] = useState(load.say);
+  const [color, setColor] = useState(load.color);
+
+  return (
+    <div class='container' style={{ width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', background:color }}>
+      <div class='card' style={{ width: '450px', height: '300px', boxShadow:'3px 3px 3px #000', padding:'10px', border:'1px solid #000' }}>
+        <p className='text'><span className='quotesStart'><FaQuoteLeft/>  </span>{quote.phrase}</p>
+        <p className='text'>{ quote.author }</p>
+        <GroupButton back={color} />
+      </div>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.querySelector('#root'))
+root.render(<App />)
