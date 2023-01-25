@@ -2,16 +2,20 @@ import React from 'react';
 
 export function Button(props) {
   return (
-    <button onClick={props.click} className="button" style={{
+    <a href={props.href} onClick={props.click} className="button" style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems:'center',
       color: props.back,
       width: props.w,
       height: props.h,
       border: `1.5px solid ${props.back}`,
       fontSize: '24px',
-      borderRadius:'15px'
+      borderRadius: '15px',
+      cursor:'pointer',
     }}>
       {props.children}
-    </button>
+    </a>
   );
 }
 
