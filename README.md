@@ -1,6 +1,8 @@
 <h1>Build a Random Quote Machine</h1>
 
-Objective: Build an app that is functionally similar to this: https://random-quote-machine.freecodecamp.rocks/.
+[ [codepen test 12/12](https://codepen.io/yaroslavskiba-the-animator/pen/MWBXyvK) ]
+
+Objective: Build an app that is functionally similar to this: [ https://random-quote-machine.freecodecamp.rocks/ ].
 
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
