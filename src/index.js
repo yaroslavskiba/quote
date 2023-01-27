@@ -22,7 +22,7 @@ function App() {
         background: color,
       }}>
       
-        <div className='card' style={{
+        <div className='card' id="quote-box" style={{
           maxWidth: '760px',
           width: '100%',
           background: '#fff',
@@ -35,7 +35,7 @@ function App() {
         }}>
           
           <div className='quotes'>
-            <p className='text' style={{
+            <p className='text' id="text" style={{
               padding: '0 0 0 25px',
               color: color,
               fontSize: '30px'
@@ -47,7 +47,7 @@ function App() {
               width: '100%',
             }}>
               
-              <p className='author' style={{
+              <p className='author' id="author" style={{
                 fontSize:'18px',
                 textTransform:'uppercase',
                 fontWeight:'500',
@@ -67,9 +67,9 @@ function App() {
           }}>
             <div className='social' style={{display:'flex', gap:'25px'}}>
             <Button w='70px' h='70px' back={color} href='https://www.tumblr.com/' >
-              <FaTumblr />
+            <FaTumblr />
             </Button>
-            <Button w='70px' h='70px' back={color} href='https://www.twitter.com/' >
+            <Button w='70px' h='70px' back={color} href='https://www.twitter.com/intent/tweet' id="tweet-quote" >
               <FaTwitter />
             </Button>
           </div>
@@ -78,20 +78,17 @@ function App() {
             let loadHandler;
             do {
               loadHandler = handle();
-              console.log(loadHandler.say.phrase, quote)
             } while (loadHandler.say.phrase === quote.phrase);
-
               setColor(loadHandler.color);
               setQuote(loadHandler.say);
-            }} back={color}>
+            }} back={color} id="new-quote">
             Next Quote <FaCarrot />
           </Button>
-
           </div>
         </div>
       </div>
   );
 }
 
-const root = ReactDOM.createRoot(document.querySelector('#root'))
-root.render(<App />)
+const root = ReactDOM.createRoot(document.querySelector('#root'));
+root.render(<App />);
