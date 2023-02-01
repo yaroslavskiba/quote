@@ -66,10 +66,17 @@ function App() {
             justifyContent: 'space-between'
           }}>
             <div className='social' style={{display:'flex', gap:'25px'}}>
+<<<<<<< HEAD
             <Button w='70px' h='70px' id="tumblr-quote" back={color} href='https://www.tumblr.com/' >
               <FaTumblr />
             </Button>
             <Button w='70px' h='70px' id="tweet-quote" back={color} href='https://www.twitter.com/intent/tweet/' >
+=======
+            <Button w='70px' h='70px' back={color} href='https://www.tumblr.com/' >
+            <FaTumblr />
+            </Button>
+            <Button w='70px' h='70px' back={color} href='https://www.twitter.com/intent/tweet' id="tweet-quote" >
+>>>>>>> 948b3d8853fbebb76b0fb7a45e47aba4aeb24579
               <FaTwitter />
             </Button>
           </div>
@@ -78,20 +85,17 @@ function App() {
             let loadHandler;
             do {
               loadHandler = handle();
-              console.log(loadHandler.say.phrase, quote)
             } while (loadHandler.say.phrase === quote.phrase);
-
               setColor(loadHandler.color);
               setQuote(loadHandler.say);
-            }} back={color}>
+            }} back={color} id="new-quote">
             Next Quote <FaCarrot />
           </Button>
-
           </div>
         </div>
       </div>
   );
 }
 
-const root = ReactDOM.createRoot(document.querySelector('#root'))
-root.render(<App />)
+const root = ReactDOM.createRoot(document.querySelector('#root'));
+root.render(<App />);
