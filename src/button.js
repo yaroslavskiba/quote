@@ -2,7 +2,7 @@ import React from 'react';
 
 export function Button(props) {
   return (
-    <a href={props.href} onClick={props.click} className="button" style={{
+    <a href={props.href} id={props.id} onClick={props.click} className="button" style={{
       display: 'flex',
       justifyContent: 'center',
       alignItems:'center',
